@@ -9,12 +9,11 @@ const ContactForm = () => {
   const onSubmit = (data) => {
     setData(data);
   };
-
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="firstName">First Name*</label>
+          <label htmlFor="firstName">First Name*
           <input
             name="firstName"
             placeholder="Edd"
@@ -23,10 +22,11 @@ const ContactForm = () => {
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
           )}
+          </label>
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name*</label>
+          <label htmlFor="lastName">Last Name*
           <input
             name="lastName"
             placeholder="Burke"
@@ -35,6 +35,7 @@ const ContactForm = () => {
           {errors.lastName && (
             <p>Looks like there was an error: {errors.lastName.type}</p>
           )}
+          </label>
         </div>
 
         <div>
@@ -57,7 +58,8 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        
+        <button onClick={handleSubmit(onSubmit)} type="button" >Submit</button>
       </form>
     </div>
   );
